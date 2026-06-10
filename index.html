@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>Detalle Contexto</title>
+<title>Crear Registro</title>
 
 <style>
 *{
@@ -30,7 +30,6 @@ body{
   display:flex;
   flex-direction:column;
   overflow:hidden;
-  position:relative;
 }
 
 /* HEADER */
@@ -43,173 +42,112 @@ body{
 
 .back{font-size:13px;color:#7a8596;}
 .title{font-size:16px;font-weight:600;color:#2b2f36;}
-.menu{width:34px;height:34px;border-radius:12px;background:#f2f5fb;display:flex;align-items:center;justify-content:center;color:#4f7cff}
+.skip{font-size:13px;color:#4f7cff;}
 
 /* HERO */
 .hero{
-  margin:10px 20px;
-  padding:16px;
-  border-radius:18px;
-  background:linear-gradient(135deg,#eef3ff,#f8fbff);
-  border:1px solid #e6ecf5;
+  padding:0 20px;
+  margin-top:10px;
 }
 
-.hero-top{
+.hero h2{
+  font-size:18px;
+  color:#2b2f36;
+  font-weight:600;
+}
+
+.hero p{
+  margin-top:6px;
+  font-size:13px;
+  color:#7a8596;
+  line-height:1.5;
+}
+
+/* OPTIONS */
+.options{
+  flex:1;
+  padding:20px;
   display:flex;
+  flex-direction:column;
   gap:12px;
+  overflow-y:auto;
+}
+
+.option{
+  display:flex;
   align-items:center;
+  justify-content:space-between;
+  padding:16px;
+  border-radius:18px;
+  border:1px solid #e6ecf5;
+  background:#f8fbff;
+  cursor:pointer;
+  transition:0.2s ease;
+}
+
+.option:active{
+  transform:scale(0.98);
+}
+
+.left{
+  display:flex;
+  align-items:center;
+  gap:12px;
 }
 
 .icon{
   width:44px;
   height:44px;
   border-radius:14px;
-  background:#e0ecff;
   display:flex;
   align-items:center;
   justify-content:center;
   font-size:20px;
 }
 
-.context-name{font-size:16px;font-weight:600;color:#2b2f36;}
-.context-meta{font-size:12px;color:#7a8596;}
-
-.hero-text{
-  margin-top:10px;
-  font-size:13px;
-  color:#5f6b7a;
-  line-height:1.5;
-}
-
-/* SECTION */
-.section{
-  padding:10px 20px;
-  font-size:12px;
-  color:#9aa6b2;
-  text-transform:uppercase;
-}
-
-/* LIST */
-.list{
-  flex:1;
-  overflow-y:auto;
-  padding:0 20px 90px;
+.text{
   display:flex;
   flex-direction:column;
-  gap:12px;
 }
 
-/* BASE CARD */
-.card{
-  border-radius:16px;
-  padding:14px;
-  border:1px solid #e6ecf5;
-}
-
-/* RECORRIDO VISUAL POR TIPO */
-
-/* 📸 RECUERDO (IMAGEN) */
-.recuerdo{
-  background:#fffaf2;
-}
-.recuerdo img{
-  width:100%;
-  border-radius:12px;
-  margin-top:8px;
-}
-
-/* 🏆 LOGRO */
-.logro{
-  background:#f8fbff;
-}
-.badge{
-  display:inline-block;
-  padding:4px 10px;
-  font-size:11px;
-  border-radius:999px;
-  background:#e0ecff;
-  color:#4f7cff;
-  margin-top:6px;
-}
-
-/* 💬 VALIDACIÓN (mensaje tipo chat) */
-.validacion{
-  background:#fff7f8;
-}
-.chat{
-  margin-top:8px;
-  padding:10px;
-  border-radius:12px;
-  background:#ffffff;
-  border:1px solid #ffe1e6;
-  font-size:13px;
-  color:#2b2f36;
-}
-
-/* 🧠 NOTA PERSONAL */
-.nota{
-  background:#f7f9ff;
-}
-.note-text{
-  font-size:13px;
-  color:#2b2f36;
-  line-height:1.5;
-  font-style:italic;
-}
-
-/* TOP */
-.top{
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-}
-
-.type{
-  font-size:12px;
+.name{
+  font-size:14px;
   font-weight:600;
+  color:#2b2f36;
 }
 
-.logro .type{color:#4f7cff;}
-.validacion .type{color:#ff5c7a;}
-.recuerdo .type{color:#f59e0b;}
-.nota .type{color:#7a5cff;}
-
-.date{
-  font-size:11px;
-  color:#a0a9b8;
+.desc{
+  font-size:12px;
+  color:#7a8596;
 }
 
-/* FAB CORRECTO */
-.fab{
-  position:absolute;
-  bottom:85px;
-  right:18px;
-  width:54px;
-  height:54px;
-  border-radius:18px;
+/* COLORS BY TYPE */
+.recuerdo{background:#fff6e8;}
+.logro{background:#eaf1ff;}
+.validacion{background:#ffeaf0;}
+.nota{background:#f0eeff;}
+.recurso{background:#eafff3;}
+
+/* FOOTER */
+.footer{
+  padding:16px 20px;
+  border-top:1px solid #eef2f7;
+}
+
+.btn{
+  width:100%;
+  padding:14px;
+  border:none;
+  border-radius:16px;
   background:#4f7cff;
   color:#fff;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  font-size:22px;
-  box-shadow:0 10px 25px rgba(79,124,255,0.3);
+  font-size:14px;
+  font-weight:500;
 }
 
-/* NAV */
-.nav{
-  height:70px;
-  border-top:1px solid #eef2f7;
-  display:flex;
-  justify-content:space-around;
-  align-items:center;
+.btn:disabled{
+  background:#c8d3f5;
 }
-
-.nav-item{
-  font-size:12px;
-  color:#a0a9b8;
-}
-.active{color:#4f7cff;}
 
 </style>
 </head>
@@ -221,89 +159,76 @@ body{
   <!-- HEADER -->
   <div class="header">
     <div class="back">‹ Atrás</div>
-    <div class="title">Trabajo</div>
-    <div class="menu">⋯</div>
+    <div class="title">Nuevo registro</div>
+    <div class="skip">Cancelar</div>
   </div>
 
   <!-- HERO -->
   <div class="hero">
-    <div class="hero-top">
-      <div class="icon">💼</div>
-      <div>
-        <div class="context-name">Trabajo</div>
-        <div class="context-meta">4 elementos</div>
-      </div>
-    </div>
-
-    <div class="hero-text">
-      Esto no son registros. Son pruebas reales de tu recorrido en este espacio.
-    </div>
+    <h2>¿Qué querés guardar?</h2>
+    <p>
+      No tiene que ser perfecto. Solo elegí qué tipo de evidencia representa mejor lo que viviste.
+    </p>
   </div>
 
-  <div class="section">Contenido</div>
+  <!-- OPTIONS -->
+  <div class="options">
 
-  <div class="list">
-
-    <!-- 📸 RECUERDO -->
-    <div class="card recuerdo">
-      <div class="top">
-        <div class="type">Recuerdo</div>
-        <div class="date">Hace 2 meses</div>
-      </div>
-
-      <img src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?w=800" />
-
-    </div>
-
-    <!-- 🏆 LOGRO -->
-    <div class="card logro">
-      <div class="top">
-        <div class="type">Logro</div>
-        <div class="date">Hace 3 semanas</div>
-      </div>
-
-      <div class="note-text">
-        Proyecto finalizado antes del deadline
-      </div>
-
-      <div class="badge">⭐ Excelente rendimiento</div>
-    </div>
-
-    <!-- 💬 VALIDACIÓN -->
-    <div class="card validacion">
-      <div class="top">
-        <div class="type">Validación</div>
-        <div class="date">Hace 1 mes</div>
-      </div>
-
-      <div class="chat">
-        “Tu trabajo mejoró muchísimo este mes, se nota tu evolución.”
+    <div class="option recuerdo">
+      <div class="left">
+        <div class="icon">📸</div>
+        <div class="text">
+          <div class="name">Recuerdo</div>
+          <div class="desc">Una foto o momento importante</div>
+        </div>
       </div>
     </div>
 
-    <!-- 🧠 NOTA PERSONAL -->
-    <div class="card nota">
-      <div class="top">
-        <div class="type">Nota personal</div>
-        <div class="date">Hoy</div>
+    <div class="option logro">
+      <div class="left">
+        <div class="icon">🏆</div>
+        <div class="text">
+          <div class="name">Logro</div>
+          <div class="desc">Algo que hiciste bien o terminaste</div>
+        </div>
       </div>
+    </div>
 
-      <div class="note-text">
-        Estoy progresando incluso cuando siento que no.
-        No todo lo que pienso en días malos es real.
+    <div class="option validacion">
+      <div class="left">
+        <div class="icon">💬</div>
+        <div class="text">
+          <div class="name">Validación</div>
+          <div class="desc">Un mensaje positivo de alguien</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="option nota">
+      <div class="left">
+        <div class="icon">🧠</div>
+        <div class="text">
+          <div class="name">Nota personal</div>
+          <div class="desc">Algo que querés recordarte</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="option recurso">
+      <div class="left">
+        <div class="icon">🎧</div>
+        <div class="text">
+          <div class="name">Recurso</div>
+          <div class="desc">Música, video o link útil</div>
+        </div>
       </div>
     </div>
 
   </div>
 
-  <!-- FAB -->
-  <div class="fab">+</div>
-
-  <!-- NAV -->
-  <div class="nav">
-    <div class="nav-item active">Inicio</div>
-    <div class="nav-item">Buscar</div>
-    <div class="nav-item">Perfil</div>
+  <!-- FOOTER -->
+  <div class="footer">
+    <button class="btn">Continuar</button>
   </div>
 
 </div>
