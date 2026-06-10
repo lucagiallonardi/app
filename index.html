@@ -3,25 +3,36 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>Logro</title>
+<title>Recurso</title>
 
 <style>
-/* (mismo base layout) */
 *{margin:0;padding:0;box-sizing:border-box;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;}
 body{background:#eef3f9;height:100vh;display:flex;justify-content:center;align-items:center;}
-.phone{width:390px;height:844px;background:#fff;border-radius:28px;box-shadow:0 20px 60px rgba(0,0,0,0.12);display:flex;flex-direction:column;overflow:hidden;}
 
-.header{padding:18px 20px;border-bottom:1px solid #eef2f7;display:flex;justify-content:space-between;}
-.title{font-size:14px;font-weight:600;color:#2b2f36;}
+.phone{
+  width:390px;height:844px;background:#fff;border-radius:28px;
+  box-shadow:0 20px 60px rgba(0,0,0,0.12);
+  display:flex;flex-direction:column;overflow:hidden;
+}
+
+.header{
+  padding:18px 20px;
+  border-bottom:1px solid #eef2f7;
+}
+
 .back{font-size:12px;color:#7a8596;}
 
-.content{flex:1;overflow-y:auto;padding:16px;}
+.content{
+  flex:1;
+  overflow-y:auto;
+  padding:16px;
+}
 
-.hero{
+.media{
   width:100%;
-  height:140px;
+  height:240px;
   border-radius:18px;
-  background:linear-gradient(135deg,#dbeafe,#eff6ff);
+  background:linear-gradient(135deg,#c7d2fe,#e0e7ff);
   display:flex;
   align-items:center;
   justify-content:center;
@@ -30,19 +41,24 @@ body{background:#eef3f9;height:100vh;display:flex;justify-content:center;align-i
 
 .card{
   margin-top:14px;
-  padding:14px;
-  border:1px solid #e6ecf5;
+  padding:16px;
   border-radius:16px;
+  border:1px solid #e6ecf5;
+  background:#fff;
 }
 
-.label{font-size:11px;color:#9aa6b2;text-transform:uppercase;}
-.text{font-size:14px;color:#2b2f36;margin-top:6px;line-height:1.5;}
+.title{
+  font-size:15px;
+  font-weight:600;
+  color:#2b2f36;
+}
 
-.footer{padding:16px;border-top:1px solid #eef2f7;display:flex;gap:10px;}
-
-.btn{flex:1;padding:12px;border-radius:14px;border:none;font-size:13px;font-weight:600;}
-.primary{background:#4f7cff;color:#fff;}
-.secondary{background:#f1f4ff;color:#4f7cff;}
+.desc{
+  margin-top:6px;
+  font-size:13px;
+  color:#5f6b7a;
+  line-height:1.5;
+}
 </style>
 </head>
 
@@ -50,25 +66,18 @@ body{background:#eef3f9;height:100vh;display:flex;justify-content:center;align-i
 <div class="phone">
 
   <div class="header">
-    <div class="back">‹ Volver</div>
-    <div class="title">Logro</div>
-    <div></div>
+    <div class="back">‹ Atrás</div>
   </div>
 
   <div class="content">
 
-    <div class="hero">🏆</div>
+    <div class="media">🎧 / 🎬</div>
 
     <div class="card">
-      <div class="label">Logro</div>
-      <div class="text">Terminaste un proyecto que venías evitando hace semanas.</div>
+      <div class="title">Música para concentrarme</div>
+      <div class="desc">Este recurso te ayuda a entrar en foco cuando estás disperso o ansioso.</div>
     </div>
 
-  </div>
-
-  <div class="footer">
-    <button class="btn secondary">Editar</button>
-    <button class="btn primary">Usar en recuperar</button>
   </div>
 
 </div>
