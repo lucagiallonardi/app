@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>Crear Registro</title>
+<title>Crear Recuerdo</title>
 
 <style>
 *{
@@ -42,91 +42,85 @@ body{
 
 .back{font-size:13px;color:#7a8596;}
 .title{font-size:16px;font-weight:600;color:#2b2f36;}
-.skip{font-size:13px;color:#4f7cff;}
+.save{font-size:13px;color:#4f7cff;}
 
-/* HERO */
-.hero{
-  padding:0 20px;
-  margin-top:10px;
+/* CONTENT */
+.content{
+  flex:1;
+  padding:20px;
+  overflow-y:auto;
+  display:flex;
+  flex-direction:column;
+  gap:16px;
 }
 
-.hero h2{
-  font-size:18px;
-  color:#2b2f36;
-  font-weight:600;
-}
-
-.hero p{
-  margin-top:6px;
-  font-size:13px;
+/* IMAGE UPLOAD */
+.upload{
+  width:100%;
+  height:220px;
+  border-radius:20px;
+  border:2px dashed #cfd8ea;
+  background:#f8fbff;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  gap:8px;
   color:#7a8596;
+}
+
+.upload strong{
+  color:#4f7cff;
+  font-size:13px;
+}
+
+.upload span{
+  font-size:12px;
+}
+
+/* INPUTS */
+.label{
+  font-size:12px;
+  color:#9aa6b2;
+  margin-bottom:6px;
+  text-transform:uppercase;
+}
+
+input, textarea{
+  width:100%;
+  border-radius:14px;
+  border:1px solid #e6ecf5;
+  background:#f9fbfd;
+  padding:14px;
+  font-size:13px;
+  outline:none;
+}
+
+textarea{
+  height:100px;
+  resize:none;
   line-height:1.5;
 }
 
-/* OPTIONS */
-.options{
-  flex:1;
-  padding:20px;
-  display:flex;
-  flex-direction:column;
-  gap:12px;
-  overflow-y:auto;
-}
-
-.option{
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  padding:16px;
-  border-radius:18px;
+/* PREVIEW CARD */
+.preview{
+  background:#fffaf2;
   border:1px solid #e6ecf5;
-  background:#f8fbff;
-  cursor:pointer;
-  transition:0.2s ease;
+  border-radius:18px;
+  overflow:hidden;
 }
 
-.option:active{
-  transform:scale(0.98);
+.preview img{
+  width:100%;
+  height:180px;
+  object-fit:cover;
 }
 
-.left{
-  display:flex;
-  align-items:center;
-  gap:12px;
-}
-
-.icon{
-  width:44px;
-  height:44px;
-  border-radius:14px;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  font-size:20px;
-}
-
-.text{
-  display:flex;
-  flex-direction:column;
-}
-
-.name{
-  font-size:14px;
-  font-weight:600;
+.preview-text{
+  padding:12px;
+  font-size:13px;
   color:#2b2f36;
 }
-
-.desc{
-  font-size:12px;
-  color:#7a8596;
-}
-
-/* COLORS BY TYPE */
-.recuerdo{background:#fff6e8;}
-.logro{background:#eaf1ff;}
-.validacion{background:#ffeaf0;}
-.nota{background:#f0eeff;}
-.recurso{background:#eafff3;}
 
 /* FOOTER */
 .footer{
@@ -159,68 +153,43 @@ body{
   <!-- HEADER -->
   <div class="header">
     <div class="back">‹ Atrás</div>
-    <div class="title">Nuevo registro</div>
-    <div class="skip">Cancelar</div>
+    <div class="title">Nuevo recuerdo</div>
+    <div class="save">Guardar</div>
   </div>
 
-  <!-- HERO -->
-  <div class="hero">
-    <h2>¿Qué querés guardar?</h2>
-    <p>
-      No tiene que ser perfecto. Solo elegí qué tipo de evidencia representa mejor lo que viviste.
-    </p>
-  </div>
+  <!-- CONTENT -->
+  <div class="content">
 
-  <!-- OPTIONS -->
-  <div class="options">
-
-    <div class="option recuerdo">
-      <div class="left">
-        <div class="icon">📸</div>
-        <div class="text">
-          <div class="name">Recuerdo</div>
-          <div class="desc">Una foto o momento importante</div>
-        </div>
-      </div>
+    <!-- UPLOAD -->
+    <div class="upload">
+      <div style="font-size:22px;">📸</div>
+      <strong>Subí una foto</strong>
+      <span>o tocá para elegir desde tu galería</span>
     </div>
 
-    <div class="option logro">
-      <div class="left">
-        <div class="icon">🏆</div>
-        <div class="text">
-          <div class="name">Logro</div>
-          <div class="desc">Algo que hiciste bien o terminaste</div>
-        </div>
-      </div>
+    <!-- TITLE -->
+    <div>
+      <div class="label">Título</div>
+      <input type="text" placeholder="Ej: Día que me sentí orgulloso/a" />
     </div>
 
-    <div class="option validacion">
-      <div class="left">
-        <div class="icon">💬</div>
-        <div class="text">
-          <div class="name">Validación</div>
-          <div class="desc">Un mensaje positivo de alguien</div>
-        </div>
-      </div>
+    <!-- CONTEXT -->
+    <div>
+      <div class="label">Contexto</div>
+      <input type="text" value="Trabajo" disabled />
     </div>
 
-    <div class="option nota">
-      <div class="left">
-        <div class="icon">🧠</div>
-        <div class="text">
-          <div class="name">Nota personal</div>
-          <div class="desc">Algo que querés recordarte</div>
-        </div>
-      </div>
+    <!-- NOTE -->
+    <div>
+      <div class="label">¿Qué querés recordar de esto?</div>
+      <textarea placeholder="Ej: Aunque estaba nervioso, lo hice igual..."></textarea>
     </div>
 
-    <div class="option recurso">
-      <div class="left">
-        <div class="icon">🎧</div>
-        <div class="text">
-          <div class="name">Recurso</div>
-          <div class="desc">Música, video o link útil</div>
-        </div>
+    <!-- PREVIEW -->
+    <div class="preview">
+      <img src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?w=800"/>
+      <div class="preview-text">
+        Este momento te representa algo importante que lograste.
       </div>
     </div>
 
@@ -228,7 +197,7 @@ body{
 
   <!-- FOOTER -->
   <div class="footer">
-    <button class="btn">Continuar</button>
+    <button class="btn">Guardar recuerdo</button>
   </div>
 
 </div>
