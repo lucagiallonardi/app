@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>Crear Validación</title>
+<title>Crear Logro</title>
 
 <style>
 *{
@@ -54,30 +54,18 @@ body{
   gap:16px;
 }
 
-/* UPLOAD */
-.upload{
-  border:2px dashed #ffd3dc;
-  background:#fff7f8;
-  border-radius:20px;
-  padding:18px;
-  display:flex;
-  flex-direction:column;
-  align-items:center;
-  justify-content:center;
-  gap:6px;
-  color:#ff5c7a;
-}
-
-.upload strong{
+/* HERO */
+.hero{
+  padding:14px;
+  border-radius:18px;
+  background:#f8fbff;
+  border:1px solid #e6ecf5;
   font-size:13px;
+  color:#5f6b7a;
+  line-height:1.5;
 }
 
-.upload span{
-  font-size:12px;
-  color:#a0a9b8;
-}
-
-/* LABEL */
+/* INPUT */
 .label{
   font-size:12px;
   color:#9aa6b2;
@@ -85,44 +73,79 @@ body{
   margin-bottom:6px;
 }
 
-input{
+input, textarea{
   width:100%;
   padding:14px;
   border-radius:14px;
   border:1px solid #e6ecf5;
   background:#f9fbfd;
   font-size:13px;
+  outline:none;
 }
 
-/* CHAT PREVIEW */
-.chat-preview{
+textarea{
+  height:110px;
+  resize:none;
+  line-height:1.5;
+}
+
+/* SCORE */
+.score-box{
   background:#f8fbff;
   border:1px solid #e6ecf5;
   border-radius:18px;
   padding:14px;
-  display:flex;
-  flex-direction:column;
-  gap:10px;
 }
 
-.message{
-  background:#fff;
+.score-title{
+  font-size:13px;
+  font-weight:600;
+  color:#2b2f36;
+  margin-bottom:10px;
+}
+
+.stars{
+  display:flex;
+  gap:8px;
+}
+
+.star{
+  width:38px;
+  height:38px;
+  border-radius:12px;
+  background:#eaf1ff;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  color:#4f7cff;
+  font-size:16px;
+}
+
+/* PREVIEW */
+.preview{
+  border-radius:18px;
   border:1px solid #e6ecf5;
-  padding:12px;
-  border-radius:14px;
+  background:#ffffff;
+  padding:14px;
+}
+
+.preview-header{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  margin-bottom:8px;
+}
+
+.preview-type{
+  font-size:12px;
+  color:#4f7cff;
+  font-weight:600;
+}
+
+.preview-text{
   font-size:13px;
   color:#2b2f36;
-  max-width:85%;
-}
-
-.message.self{
-  align-self:flex-end;
-  background:#eaf1ff;
-  border-color:#d6e3ff;
-}
-
-.message.other{
-  align-self:flex-start;
+  line-height:1.5;
 }
 
 /* FOOTER */
@@ -136,14 +159,14 @@ input{
   padding:14px;
   border:none;
   border-radius:16px;
-  background:#ff5c7a;
+  background:#4f7cff;
   color:#fff;
   font-size:14px;
   font-weight:500;
 }
 
 .btn:disabled{
-  background:#f3b6c2;
+  background:#c8d3f5;
 }
 
 </style>
@@ -156,44 +179,60 @@ input{
   <!-- HEADER -->
   <div class="header">
     <div class="back">‹ Atrás</div>
-    <div class="title">Nueva validación</div>
+    <div class="title">Nuevo logro</div>
     <div class="save">Guardar</div>
   </div>
 
-  <!-- CONTENT -->
   <div class="content">
 
-    <!-- UPLOAD -->
-    <div class="upload">
-      <div style="font-size:22px;">💬</div>
-      <strong>Subí una captura o mensaje</strong>
-      <span>WhatsApp, chat, email, etc.</span>
+    <!-- HERO -->
+    <div class="hero">
+      Esto no tiene que ser algo “grande”.  
+      Si te costó, cuenta. Si te hizo crecer, cuenta.
     </div>
 
-    <!-- SOURCE -->
+    <!-- TITLE -->
     <div>
-      <div class="label">¿Quién lo dijo?</div>
-      <input type="text" placeholder="Ej: Mi jefe / Profesor / Amigo" />
+      <div class="label">Título del logro</div>
+      <input type="text" placeholder="Ej: Terminé un proyecto difícil" />
     </div>
 
-    <!-- CHAT PREVIEW -->
-    <div class="chat-preview">
+    <!-- DESCRIPTION -->
+    <div>
+      <div class="label">¿Qué pasó?</div>
+      <textarea placeholder="Ej: Me costó mucho, pero lo terminé igual..."></textarea>
+    </div>
 
-      <div class="message other">
-        La verdad hiciste un muy buen trabajo en este proyecto.
+    <!-- SCORE -->
+    <div class="score-box">
+      <div class="score-title">Nivel de esfuerzo percibido</div>
+
+      <div class="stars">
+        <div class="star">★</div>
+        <div class="star">★</div>
+        <div class="star">★</div>
+        <div class="star">★</div>
+        <div class="star">★</div>
+      </div>
+    </div>
+
+    <!-- PREVIEW -->
+    <div class="preview">
+      <div class="preview-header">
+        <div class="preview-type">Logro</div>
+        <div style="font-size:11px;color:#a0a9b8;">Vista previa</div>
       </div>
 
-      <div class="message self">
-        ¡Gracias! Lo intenté dar lo mejor.
+      <div class="preview-text">
+        “Terminé un proyecto difícil que venía evitando hace semanas.”
       </div>
-
     </div>
 
   </div>
 
   <!-- FOOTER -->
   <div class="footer">
-    <button class="btn">Guardar validación</button>
+    <button class="btn">Guardar logro</button>
   </div>
 
 </div>
