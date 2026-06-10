@@ -30,6 +30,7 @@ body{
   display:flex;
   flex-direction:column;
   overflow:hidden;
+  position:relative;
 }
 
 /* HEADER */
@@ -55,8 +56,8 @@ body{
 
 .hero-top{
   display:flex;
-  align-items:center;
   gap:12px;
+  align-items:center;
 }
 
 .icon{
@@ -92,30 +93,71 @@ body{
 .list{
   flex:1;
   overflow-y:auto;
-  padding:0 20px 10px;
+  padding:0 20px 90px;
   display:flex;
   flex-direction:column;
   gap:12px;
 }
 
-/* CARD BASE */
+/* BASE CARD */
 .card{
   border-radius:16px;
   padding:14px;
   border:1px solid #e6ecf5;
-  display:flex;
-  flex-direction:column;
-  gap:6px;
 }
 
-/* TYPES */
-.logro{background:#f8fbff;}
-.validacion{background:#fff7f8;}
-.nota{background:#f7f9ff;}
-.recurso{background:#f4fff9;}
-.recuerdo{background:#fffaf2;}
+/* RECORRIDO VISUAL POR TIPO */
 
-/* HEADER CARD */
+/* 📸 RECUERDO (IMAGEN) */
+.recuerdo{
+  background:#fffaf2;
+}
+.recuerdo img{
+  width:100%;
+  border-radius:12px;
+  margin-top:8px;
+}
+
+/* 🏆 LOGRO */
+.logro{
+  background:#f8fbff;
+}
+.badge{
+  display:inline-block;
+  padding:4px 10px;
+  font-size:11px;
+  border-radius:999px;
+  background:#e0ecff;
+  color:#4f7cff;
+  margin-top:6px;
+}
+
+/* 💬 VALIDACIÓN (mensaje tipo chat) */
+.validacion{
+  background:#fff7f8;
+}
+.chat{
+  margin-top:8px;
+  padding:10px;
+  border-radius:12px;
+  background:#ffffff;
+  border:1px solid #ffe1e6;
+  font-size:13px;
+  color:#2b2f36;
+}
+
+/* 🧠 NOTA PERSONAL */
+.nota{
+  background:#f7f9ff;
+}
+.note-text{
+  font-size:13px;
+  color:#2b2f36;
+  line-height:1.5;
+  font-style:italic;
+}
+
+/* TOP */
 .top{
   display:flex;
   justify-content:space-between;
@@ -129,29 +171,21 @@ body{
 
 .logro .type{color:#4f7cff;}
 .validacion .type{color:#ff5c7a;}
-.nota .type{color:#7a5cff;}
-.recurso .type{color:#2bb673;}
 .recuerdo .type{color:#f59e0b;}
+.nota .type{color:#7a5cff;}
 
 .date{
   font-size:11px;
   color:#a0a9b8;
 }
 
-/* TEXT */
-.text{
-  font-size:13px;
-  color:#2b2f36;
-  line-height:1.5;
-}
-
-/* FLOAT */
-.add{
+/* FAB CORRECTO */
+.fab{
   position:absolute;
   bottom:85px;
   right:18px;
-  width:52px;
-  height:52px;
+  width:54px;
+  height:54px;
   border-radius:18px;
   background:#4f7cff;
   color:#fff;
@@ -175,7 +209,6 @@ body{
   font-size:12px;
   color:#a0a9b8;
 }
-
 .active{color:#4f7cff;}
 
 </style>
@@ -198,13 +231,12 @@ body{
       <div class="icon">💼</div>
       <div>
         <div class="context-name">Trabajo</div>
-        <div class="context-meta">5 elementos guardados</div>
+        <div class="context-meta">4 elementos</div>
       </div>
     </div>
 
     <div class="hero-text">
-      Estas son evidencias reales de tu historia en este contexto.
-      No las estás guardando — las estás recuperando.
+      Esto no son registros. Son pruebas reales de tu recorrido en este espacio.
     </div>
   </div>
 
@@ -212,65 +244,62 @@ body{
 
   <div class="list">
 
-    <!-- LOGRO -->
-    <div class="card logro">
-      <div class="top">
-        <div class="type">Logro</div>
-        <div class="date">Hace 2 semanas</div>
-      </div>
-      <div class="text">
-        Terminé el proyecto antes del plazo y el equipo destacó mi organización.
-      </div>
-    </div>
-
-    <!-- VALIDACION -->
-    <div class="card validacion">
-      <div class="top">
-        <div class="type">Validación</div>
-        <div class="date">Hace 1 mes</div>
-      </div>
-      <div class="text">
-        “Se nota muchísimo tu evolución, estás trabajando muy bien últimamente.”
-      </div>
-    </div>
-
-    <!-- NOTA PERSONAL -->
-    <div class="card nota">
-      <div class="top">
-        <div class="type">Nota personal</div>
-        <div class="date">Hace 3 días</div>
-      </div>
-      <div class="text">
-        Aunque hoy me sienta inseguro, ya resolví problemas complejos antes. Esto también va a pasar.
-      </div>
-    </div>
-
-    <!-- RECURSO -->
-    <div class="card recurso">
-      <div class="top">
-        <div class="type">Recurso</div>
-        <div class="date">Guardado</div>
-      </div>
-      <div class="text">
-        Playlist “Focus & Calm” que me ayuda a concentrarme cuando estoy saturado.
-      </div>
-    </div>
-
-    <!-- RECUERDO -->
+    <!-- 📸 RECUERDO -->
     <div class="card recuerdo">
       <div class="top">
         <div class="type">Recuerdo</div>
         <div class="date">Hace 2 meses</div>
       </div>
-      <div class="text">
-        El día que presenté en público sin preparación perfecta y salió bien igual.
+
+      <img src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?w=800" />
+
+    </div>
+
+    <!-- 🏆 LOGRO -->
+    <div class="card logro">
+      <div class="top">
+        <div class="type">Logro</div>
+        <div class="date">Hace 3 semanas</div>
+      </div>
+
+      <div class="note-text">
+        Proyecto finalizado antes del deadline
+      </div>
+
+      <div class="badge">⭐ Excelente rendimiento</div>
+    </div>
+
+    <!-- 💬 VALIDACIÓN -->
+    <div class="card validacion">
+      <div class="top">
+        <div class="type">Validación</div>
+        <div class="date">Hace 1 mes</div>
+      </div>
+
+      <div class="chat">
+        “Tu trabajo mejoró muchísimo este mes, se nota tu evolución.”
+      </div>
+    </div>
+
+    <!-- 🧠 NOTA PERSONAL -->
+    <div class="card nota">
+      <div class="top">
+        <div class="type">Nota personal</div>
+        <div class="date">Hoy</div>
+      </div>
+
+      <div class="note-text">
+        Estoy progresando incluso cuando siento que no.
+        No todo lo que pienso en días malos es real.
       </div>
     </div>
 
   </div>
 
-  <div class="add">+</div>
+  <!-- FAB -->
+  <div class="fab">+</div>
 
+  <!-- NAV -->
   <div class="nav">
     <div class="nav-item active">Inicio</div>
     <div class="nav-item">Buscar</div>
