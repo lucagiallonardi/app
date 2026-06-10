@@ -1,41 +1,173 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Recuerdos Emocionales</title>
-  <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Recuperar Perspectiva - Login</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    }
+
+    body {
+      background: linear-gradient(180deg, #f6f8fc 0%, #eef3f9 100%);
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    /* Mobile frame */
+    .phone {
+      width: 390px;
+      height: 844px;
+      background: #ffffff;
+      border-radius: 28px;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.12);
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: 40px 28px;
+    }
+
+    /* Header */
+    .header {
+      text-align: center;
+      margin-top: 40px;
+    }
+
+    .logo {
+      font-size: 22px;
+      font-weight: 600;
+      color: #2b2f36;
+      letter-spacing: -0.5px;
+    }
+
+    .subtitle {
+      margin-top: 10px;
+      font-size: 14px;
+      color: #7a8596;
+      line-height: 1.4;
+    }
+
+    /* Form */
+    .form {
+      margin-top: 40px;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+
+    .input {
+      padding: 14px 16px;
+      border-radius: 14px;
+      border: 1px solid #e3e8f0;
+      background: #f9fbfd;
+      font-size: 14px;
+      outline: none;
+      transition: 0.2s ease;
+    }
+
+    .input:focus {
+      border-color: #9bb7ff;
+      background: #ffffff;
+    }
+
+    .btn {
+      margin-top: 10px;
+      padding: 14px;
+      border: none;
+      border-radius: 14px;
+      background: #4f7cff;
+      color: white;
+      font-size: 14px;
+      font-weight: 500;
+      cursor: pointer;
+      transition: 0.2s ease;
+    }
+
+    .btn:hover {
+      background: #3e6df0;
+    }
+
+    .secondary {
+      text-align: center;
+      font-size: 13px;
+      color: #7a8596;
+      margin-top: 10px;
+    }
+
+    .secondary a {
+      color: #4f7cff;
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    /* Bottom calming element */
+    .footer {
+      text-align: center;
+      font-size: 12px;
+      color: #a0a9b8;
+      padding-bottom: 10px;
+    }
+
+    .dot {
+      width: 6px;
+      height: 6px;
+      background: #c7d2e6;
+      border-radius: 50%;
+      display: inline-block;
+      margin: 0 2px;
+      animation: breathe 2.5s infinite ease-in-out;
+    }
+
+    @keyframes breathe {
+      0%, 100% { transform: scale(1); opacity: 0.5; }
+      50% { transform: scale(1.6); opacity: 1; }
+    }
+  </style>
 </head>
+
 <body>
 
-  <div class="container">
+  <div class="phone">
 
-    <div class="login-card">
+    <!-- Header -->
+    <div class="header">
+      <div class="logo">Recuperar Perspectiva</div>
+      <div class="subtitle">
+        Un espacio para volver a ver con claridad<br/>
+        cuando todo se siente demasiado.
+      </div>
+    </div>
 
-      <h1>Recuerdos Emocionales</h1>
+    <!-- Form -->
+    <div>
+      <div class="form">
+        <input class="input" type="email" placeholder="Correo electrónico" />
+        <input class="input" type="password" placeholder="Contraseña" />
 
-      <p class="subtitle">
-        Reviví no solo dónde estuviste, sino cómo te sentiste.
-      </p>
+        <button class="btn">Iniciar sesión</button>
 
-      <input
-        type="email"
-        placeholder="Correo electrónico"
-      >
+        <div class="secondary">
+          ¿No tienes cuenta? <a href="#">Crear cuenta</a>
+        </div>
+      </div>
+    </div>
 
-      <input
-        type="password"
-        placeholder="Contraseña"
-      >
-
-      <button>
-        Ingresar
-      </button>
-
-      <span class="register">
-        Crear cuenta
-      </span>
-
+    <!-- Footer calming -->
+    <div class="footer">
+      respira
+      <div>
+        <span class="dot"></span>
+        <span class="dot"></span>
+        <span class="dot"></span>
+      </div>
     </div>
 
   </div>
