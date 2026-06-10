@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Recuperar Perspectiva - Dashboard</title>
+  <title>Crear Contexto</title>
 
   <style>
     * {
@@ -32,84 +32,118 @@
       flex-direction: column;
     }
 
-    /* Top bar */
-    .topbar {
-      padding: 22px 22px 10px 22px;
+    /* Header */
+    .header {
+      padding: 22px;
       display: flex;
       justify-content: space-between;
       align-items: center;
     }
 
+    .back {
+      font-size: 13px;
+      color: #7a8596;
+    }
+
     .title {
-      font-size: 16px;
+      font-size: 15px;
       font-weight: 600;
       color: #2b2f36;
     }
 
-    .icon {
-      width: 34px;
-      height: 34px;
-      border-radius: 10px;
-      background: #f2f5fb;
+    .save {
+      font-size: 13px;
+      color: #4f7cff;
+      font-weight: 500;
     }
 
     /* Content */
     .content {
       flex: 1;
+      padding: 10px 22px;
       display: flex;
       flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      padding: 0 28px;
-      text-align: center;
+      gap: 18px;
     }
 
-    .emoji {
-      font-size: 42px;
-      margin-bottom: 18px;
-    }
-
-    .headline {
-      font-size: 20px;
-      font-weight: 600;
-      color: #2b2f36;
-      margin-bottom: 10px;
-      letter-spacing: -0.3px;
-    }
-
-    .text {
-      font-size: 14px;
+    .label {
+      font-size: 12px;
       color: #7a8596;
-      line-height: 1.6;
-      max-width: 320px;
-    }
-
-    /* Card explanation */
-    .card {
-      margin-top: 24px;
-      width: 100%;
-      background: #f8fbff;
-      border: 1px solid #e6ecf5;
-      border-radius: 18px;
-      padding: 16px;
-      text-align: left;
-    }
-
-    .card-title {
-      font-size: 13px;
-      font-weight: 600;
-      color: #4f7cff;
       margin-bottom: 6px;
     }
 
-    .card-text {
-      font-size: 13px;
+    input {
+      width: 100%;
+      padding: 14px;
+      border-radius: 14px;
+      border: 1px solid #e3e8f0;
+      background: #f9fbfd;
+      outline: none;
+      font-size: 14px;
+    }
+
+    input:focus {
+      border-color: #9bb7ff;
+      background: #fff;
+    }
+
+    /* Icon selector */
+    .icons {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 10px;
+    }
+
+    .icon {
+      width: 54px;
+      height: 54px;
+      border-radius: 14px;
+      background: #f2f5fb;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 22px;
+      cursor: pointer;
+      transition: 0.2s ease;
+      border: 1px solid transparent;
+    }
+
+    .icon.active {
+      border: 1px solid #4f7cff;
+      background: #eef3ff;
+    }
+
+    /* Color picker */
+    .colors {
+      display: flex;
+      gap: 10px;
+    }
+
+    .color {
+      width: 34px;
+      height: 34px;
+      border-radius: 50%;
+      cursor: pointer;
+      border: 2px solid transparent;
+    }
+
+    .color.active {
+      border: 2px solid #2b2f36;
+    }
+
+    /* Card hint */
+    .hint {
+      padding: 14px;
+      border-radius: 14px;
+      background: #f8fbff;
+      border: 1px solid #e6ecf5;
+      font-size: 12px;
       color: #5f6b7a;
       line-height: 1.5;
     }
 
-    /* Floating CTA */
-    .cta {
+    /* Footer */
+    .footer {
       padding: 18px 22px;
     }
 
@@ -123,19 +157,10 @@
       font-size: 14px;
       font-weight: 500;
       cursor: pointer;
-      transition: 0.2s ease;
     }
 
     .btn:hover {
       background: #3e6df0;
-    }
-
-    /* subtle hint */
-    .hint {
-      margin-top: 10px;
-      text-align: center;
-      font-size: 12px;
-      color: #a0a9b8;
     }
 
   </style>
@@ -145,35 +170,58 @@
 
   <div class="phone">
 
-    <!-- Top -->
-    <div class="topbar">
-      <div class="title">Recuperar Perspectiva</div>
-      <div class="icon"></div>
+    <!-- Header -->
+    <div class="header">
+      <div class="back">Atrás</div>
+      <div class="title">Nuevo contexto</div>
+      <div class="save">Guardar</div>
     </div>
 
     <!-- Content -->
     <div class="content">
-      <div class="emoji">🌿</div>
 
-      <div class="headline">Tu espacio está listo</div>
-
-      <div class="text">
-        Acá vas a organizar pequeñas evidencias de tu vida que te ayuden a recordarte quién sos cuando lo necesites.
+      <div>
+        <div class="label">Nombre del contexto</div>
+        <input type="text" placeholder="Ej: Trabajo, Facultad, Familia..." />
       </div>
 
-      <div class="card">
-        <div class="card-title">📁 Qué son los contextos</div>
-        <div class="card-text">
-          Son áreas de tu vida: trabajo, estudio, familia, amigos, salud.
-          Dentro de cada uno vas a guardar tus logros, recuerdos y validaciones.
+      <div>
+        <div class="label">Elegí un icono</div>
+        <div class="icons">
+          <div class="icon active">💼</div>
+          <div class="icon">📚</div>
+          <div class="icon">👨‍👩‍👧</div>
+          <div class="icon">❤️</div>
+          <div class="icon">🏃</div>
+          <div class="icon">🎧</div>
+          <div class="icon">🎯</div>
+          <div class="icon">🌿</div>
+          <div class="icon">🧠</div>
+          <div class="icon">✨</div>
         </div>
       </div>
+
+      <div>
+        <div class="label">Color del contexto</div>
+        <div class="colors">
+          <div class="color active" style="background:#4f7cff;"></div>
+          <div class="color" style="background:#7dd3fc;"></div>
+          <div class="color" style="background:#a7f3d0;"></div>
+          <div class="color" style="background:#fcd34d;"></div>
+          <div class="color" style="background:#fca5a5;"></div>
+        </div>
+      </div>
+
+      <div class="hint">
+        Este contexto te ayuda a organizar recuerdos de una misma área de tu vida.
+        No tiene que ser perfecto, solo significativo para vos.
+      </div>
+
     </div>
 
-    <!-- CTA -->
-    <div class="cta">
-      <button class="btn">Crear mi primer contexto</button>
-      <div class="hint">Podés cambiarlo en cualquier momento</div>
+    <!-- Footer -->
+    <div class="footer">
+      <button class="btn">Crear contexto</button>
     </div>
 
   </div>
