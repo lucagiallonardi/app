@@ -1,201 +1,184 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Detalle de Contexto</title>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Detalle Contexto</title>
 
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-    }
+<style>
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;
+}
 
-    body {
-      background: linear-gradient(180deg, #f6f8fc 0%, #eef3f9 100%);
-      height: 100vh;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    }
+body{
+  background:linear-gradient(180deg,#f6f8fc 0%,#eef3f9 100%);
+  height:100vh;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+}
 
-    .phone {
-      width: 390px;
-      height: 844px;
-      background: #fff;
-      border-radius: 28px;
-      box-shadow: 0 20px 60px rgba(0,0,0,0.12);
-      display: flex;
-      flex-direction: column;
-      overflow: hidden;
-    }
+.phone{
+  width:390px;
+  height:844px;
+  background:#fff;
+  border-radius:28px;
+  box-shadow:0 20px 60px rgba(0,0,0,0.12);
+  display:flex;
+  flex-direction:column;
+  overflow:hidden;
+}
 
-    /* HEADER */
-    .header {
-      padding: 18px 20px 10px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
+/* HEADER */
+.header{
+  padding:18px 20px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+}
 
-    .back {
-      font-size: 13px;
-      color: #7a8596;
-    }
+.back{font-size:13px;color:#7a8596;}
+.title{font-size:16px;font-weight:600;color:#2b2f36;}
+.menu{width:34px;height:34px;border-radius:12px;background:#f2f5fb;display:flex;align-items:center;justify-content:center;color:#4f7cff}
 
-    .title {
-      font-size: 16px;
-      font-weight: 600;
-      color: #2b2f36;
-    }
+/* HERO */
+.hero{
+  margin:10px 20px;
+  padding:16px;
+  border-radius:18px;
+  background:linear-gradient(135deg,#eef3ff,#f8fbff);
+  border:1px solid #e6ecf5;
+}
 
-    .menu {
-      width: 34px;
-      height: 34px;
-      border-radius: 12px;
-      background: #f2f5fb;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 16px;
-      color: #4f7cff;
-    }
+.hero-top{
+  display:flex;
+  align-items:center;
+  gap:12px;
+}
 
-    /* HERO CONTEXT */
-    .hero {
-      margin: 10px 20px;
-      padding: 16px;
-      border-radius: 18px;
-      background: linear-gradient(135deg, #eef3ff, #f8fbff);
-      border: 1px solid #e6ecf5;
-    }
+.icon{
+  width:44px;
+  height:44px;
+  border-radius:14px;
+  background:#e0ecff;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:20px;
+}
 
-    .hero-top {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-    }
+.context-name{font-size:16px;font-weight:600;color:#2b2f36;}
+.context-meta{font-size:12px;color:#7a8596;}
 
-    .icon {
-      width: 44px;
-      height: 44px;
-      border-radius: 14px;
-      background: #e0ecff;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 20px;
-    }
+.hero-text{
+  margin-top:10px;
+  font-size:13px;
+  color:#5f6b7a;
+  line-height:1.5;
+}
 
-    .context-name {
-      font-size: 16px;
-      font-weight: 600;
-      color: #2b2f36;
-    }
+/* SECTION */
+.section{
+  padding:10px 20px;
+  font-size:12px;
+  color:#9aa6b2;
+  text-transform:uppercase;
+}
 
-    .context-meta {
-      font-size: 12px;
-      color: #7a8596;
-      margin-top: 2px;
-    }
+/* LIST */
+.list{
+  flex:1;
+  overflow-y:auto;
+  padding:0 20px 10px;
+  display:flex;
+  flex-direction:column;
+  gap:12px;
+}
 
-    .hero-text {
-      margin-top: 10px;
-      font-size: 13px;
-      color: #5f6b7a;
-      line-height: 1.5;
-    }
+/* CARD BASE */
+.card{
+  border-radius:16px;
+  padding:14px;
+  border:1px solid #e6ecf5;
+  display:flex;
+  flex-direction:column;
+  gap:6px;
+}
 
-    /* SECTION TITLE */
-    .section {
-      padding: 10px 20px;
-      font-size: 12px;
-      color: #9aa6b2;
-      text-transform: uppercase;
-      letter-spacing: 0.4px;
-    }
+/* TYPES */
+.logro{background:#f8fbff;}
+.validacion{background:#fff7f8;}
+.nota{background:#f7f9ff;}
+.recurso{background:#f4fff9;}
+.recuerdo{background:#fffaf2;}
 
-    /* LIST */
-    .list {
-      flex: 1;
-      overflow-y: auto;
-      padding: 0 20px 10px;
-      display: flex;
-      flex-direction: column;
-      gap: 12px;
-    }
+/* HEADER CARD */
+.top{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+}
 
-    .item {
-      background: #f8fbff;
-      border: 1px solid #e6ecf5;
-      border-radius: 16px;
-      padding: 14px;
-      display: flex;
-      flex-direction: column;
-      gap: 6px;
-    }
+.type{
+  font-size:12px;
+  font-weight:600;
+}
 
-    .item-top {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
+.logro .type{color:#4f7cff;}
+.validacion .type{color:#ff5c7a;}
+.nota .type{color:#7a5cff;}
+.recurso .type{color:#2bb673;}
+.recuerdo .type{color:#f59e0b;}
 
-    .type {
-      font-size: 12px;
-      color: #4f7cff;
-      font-weight: 500;
-    }
+.date{
+  font-size:11px;
+  color:#a0a9b8;
+}
 
-    .date {
-      font-size: 11px;
-      color: #a0a9b8;
-    }
+/* TEXT */
+.text{
+  font-size:13px;
+  color:#2b2f36;
+  line-height:1.5;
+}
 
-    .text {
-      font-size: 13px;
-      color: #2b2f36;
-      line-height: 1.5;
-    }
+/* FLOAT */
+.add{
+  position:absolute;
+  bottom:85px;
+  right:18px;
+  width:52px;
+  height:52px;
+  border-radius:18px;
+  background:#4f7cff;
+  color:#fff;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:22px;
+  box-shadow:0 10px 25px rgba(79,124,255,0.3);
+}
 
-    /* FLOATING ADD */
-    .add {
-      position: absolute;
-      bottom: 85px;
-      right: 18px;
-      width: 52px;
-      height: 52px;
-      border-radius: 18px;
-      background: #4f7cff;
-      color: white;
-      font-size: 22px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      box-shadow: 0 10px 25px rgba(79,124,255,0.3);
-    }
+/* NAV */
+.nav{
+  height:70px;
+  border-top:1px solid #eef2f7;
+  display:flex;
+  justify-content:space-around;
+  align-items:center;
+}
 
-    /* NAV */
-    .nav {
-      height: 70px;
-      border-top: 1px solid #eef2f7;
-      display: flex;
-      justify-content: space-around;
-      align-items: center;
-    }
+.nav-item{
+  font-size:12px;
+  color:#a0a9b8;
+}
 
-    .nav-item {
-      font-size: 12px;
-      color: #a0a9b8;
-    }
+.active{color:#4f7cff;}
 
-    .active {
-      color: #4f7cff;
-    }
-
-  </style>
+</style>
 </head>
 
 <body>
@@ -215,58 +198,79 @@
       <div class="icon">💼</div>
       <div>
         <div class="context-name">Trabajo</div>
-        <div class="context-meta">3 elementos guardados</div>
+        <div class="context-meta">5 elementos guardados</div>
       </div>
     </div>
 
     <div class="hero-text">
-      Todo lo que guardaste acá son evidencias reales de tu crecimiento en este área.
-      Podés volver a ellas cuando lo necesites.
+      Estas son evidencias reales de tu historia en este contexto.
+      No las estás guardando — las estás recuperando.
     </div>
   </div>
 
-  <!-- SECTION -->
   <div class="section">Contenido</div>
 
-  <!-- LIST -->
   <div class="list">
 
-    <div class="item">
-      <div class="item-top">
+    <!-- LOGRO -->
+    <div class="card logro">
+      <div class="top">
         <div class="type">Logro</div>
         <div class="date">Hace 2 semanas</div>
       </div>
       <div class="text">
-        Terminé el proyecto antes del plazo y recibí feedback positivo del equipo.
+        Terminé el proyecto antes del plazo y el equipo destacó mi organización.
       </div>
     </div>
 
-    <div class="item">
-      <div class="item-top">
-        <div class="type">Mensaje</div>
+    <!-- VALIDACION -->
+    <div class="card validacion">
+      <div class="top">
+        <div class="type">Validación</div>
         <div class="date">Hace 1 mes</div>
       </div>
       <div class="text">
-        “Buen trabajo, se nota tu evolución en los últimos meses.”
+        “Se nota muchísimo tu evolución, estás trabajando muy bien últimamente.”
       </div>
     </div>
 
-    <div class="item">
-      <div class="item-top">
-        <div class="type">Recuerdo</div>
-        <div class="date">Hace 3 meses</div>
+    <!-- NOTA PERSONAL -->
+    <div class="card nota">
+      <div class="top">
+        <div class="type">Nota personal</div>
+        <div class="date">Hace 3 días</div>
       </div>
       <div class="text">
-        El día que logré resolver un problema que venía arrastrando hace semanas.
+        Aunque hoy me sienta inseguro, ya resolví problemas complejos antes. Esto también va a pasar.
+      </div>
+    </div>
+
+    <!-- RECURSO -->
+    <div class="card recurso">
+      <div class="top">
+        <div class="type">Recurso</div>
+        <div class="date">Guardado</div>
+      </div>
+      <div class="text">
+        Playlist “Focus & Calm” que me ayuda a concentrarme cuando estoy saturado.
+      </div>
+    </div>
+
+    <!-- RECUERDO -->
+    <div class="card recuerdo">
+      <div class="top">
+        <div class="type">Recuerdo</div>
+        <div class="date">Hace 2 meses</div>
+      </div>
+      <div class="text">
+        El día que presenté en público sin preparación perfecta y salió bien igual.
       </div>
     </div>
 
   </div>
 
-  <!-- FLOATING ACTION -->
   <div class="add">+</div>
 
-  <!-- NAV -->
   <div class="nav">
     <div class="nav-item active">Inicio</div>
     <div class="nav-item">Buscar</div>
