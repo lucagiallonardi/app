@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Recuperar Perspectiva - Login</title>
+  <title>Recuperar Perspectiva - Dashboard</title>
 
   <style>
     * {
@@ -21,7 +21,6 @@
       align-items: center;
     }
 
-    /* Mobile frame */
     .phone {
       width: 390px;
       height: 844px;
@@ -31,58 +30,94 @@
       overflow: hidden;
       display: flex;
       flex-direction: column;
+    }
+
+    /* Top bar */
+    .topbar {
+      padding: 22px 22px 10px 22px;
+      display: flex;
       justify-content: space-between;
-      padding: 40px 28px;
+      align-items: center;
     }
 
-    /* Header */
-    .header {
-      text-align: center;
-      margin-top: 40px;
-    }
-
-    .logo {
-      font-size: 22px;
+    .title {
+      font-size: 16px;
       font-weight: 600;
       color: #2b2f36;
-      letter-spacing: -0.5px;
     }
 
-    .subtitle {
-      margin-top: 10px;
-      font-size: 14px;
-      color: #7a8596;
-      line-height: 1.4;
+    .icon {
+      width: 34px;
+      height: 34px;
+      border-radius: 10px;
+      background: #f2f5fb;
     }
 
-    /* Form */
-    .form {
-      margin-top: 40px;
+    /* Content */
+    .content {
+      flex: 1;
       display: flex;
       flex-direction: column;
-      gap: 14px;
+      justify-content: center;
+      align-items: center;
+      padding: 0 28px;
+      text-align: center;
     }
 
-    .input {
-      padding: 14px 16px;
-      border-radius: 14px;
-      border: 1px solid #e3e8f0;
-      background: #f9fbfd;
+    .emoji {
+      font-size: 42px;
+      margin-bottom: 18px;
+    }
+
+    .headline {
+      font-size: 20px;
+      font-weight: 600;
+      color: #2b2f36;
+      margin-bottom: 10px;
+      letter-spacing: -0.3px;
+    }
+
+    .text {
       font-size: 14px;
-      outline: none;
-      transition: 0.2s ease;
+      color: #7a8596;
+      line-height: 1.6;
+      max-width: 320px;
     }
 
-    .input:focus {
-      border-color: #9bb7ff;
-      background: #ffffff;
+    /* Card explanation */
+    .card {
+      margin-top: 24px;
+      width: 100%;
+      background: #f8fbff;
+      border: 1px solid #e6ecf5;
+      border-radius: 18px;
+      padding: 16px;
+      text-align: left;
+    }
+
+    .card-title {
+      font-size: 13px;
+      font-weight: 600;
+      color: #4f7cff;
+      margin-bottom: 6px;
+    }
+
+    .card-text {
+      font-size: 13px;
+      color: #5f6b7a;
+      line-height: 1.5;
+    }
+
+    /* Floating CTA */
+    .cta {
+      padding: 18px 22px;
     }
 
     .btn {
-      margin-top: 10px;
+      width: 100%;
       padding: 14px;
-      border: none;
       border-radius: 14px;
+      border: none;
       background: #4f7cff;
       color: white;
       font-size: 14px;
@@ -95,41 +130,14 @@
       background: #3e6df0;
     }
 
-    .secondary {
-      text-align: center;
-      font-size: 13px;
-      color: #7a8596;
+    /* subtle hint */
+    .hint {
       margin-top: 10px;
-    }
-
-    .secondary a {
-      color: #4f7cff;
-      text-decoration: none;
-      font-weight: 500;
-    }
-
-    /* Bottom calming element */
-    .footer {
       text-align: center;
       font-size: 12px;
       color: #a0a9b8;
-      padding-bottom: 10px;
     }
 
-    .dot {
-      width: 6px;
-      height: 6px;
-      background: #c7d2e6;
-      border-radius: 50%;
-      display: inline-block;
-      margin: 0 2px;
-      animation: breathe 2.5s infinite ease-in-out;
-    }
-
-    @keyframes breathe {
-      0%, 100% { transform: scale(1); opacity: 0.5; }
-      50% { transform: scale(1.6); opacity: 1; }
-    }
   </style>
 </head>
 
@@ -137,37 +145,35 @@
 
   <div class="phone">
 
-    <!-- Header -->
-    <div class="header">
-      <div class="logo">Recuperar Perspectiva</div>
-      <div class="subtitle">
-        Un espacio para volver a ver con claridad<br/>
-        cuando todo se siente demasiado.
-      </div>
+    <!-- Top -->
+    <div class="topbar">
+      <div class="title">Recuperar Perspectiva</div>
+      <div class="icon"></div>
     </div>
 
-    <!-- Form -->
-    <div>
-      <div class="form">
-        <input class="input" type="email" placeholder="Correo electrónico" />
-        <input class="input" type="password" placeholder="Contraseña" />
+    <!-- Content -->
+    <div class="content">
+      <div class="emoji">🌿</div>
 
-        <button class="btn">Iniciar sesión</button>
+      <div class="headline">Tu espacio está listo</div>
 
-        <div class="secondary">
-          ¿No tienes cuenta? <a href="#">Crear cuenta</a>
+      <div class="text">
+        Acá vas a organizar pequeñas evidencias de tu vida que te ayuden a recordarte quién sos cuando lo necesites.
+      </div>
+
+      <div class="card">
+        <div class="card-title">📁 Qué son los contextos</div>
+        <div class="card-text">
+          Son áreas de tu vida: trabajo, estudio, familia, amigos, salud.
+          Dentro de cada uno vas a guardar tus logros, recuerdos y validaciones.
         </div>
       </div>
     </div>
 
-    <!-- Footer calming -->
-    <div class="footer">
-      respira
-      <div>
-        <span class="dot"></span>
-        <span class="dot"></span>
-        <span class="dot"></span>
-      </div>
+    <!-- CTA -->
+    <div class="cta">
+      <button class="btn">Crear mi primer contexto</button>
+      <div class="hint">Podés cambiarlo en cualquier momento</div>
     </div>
 
   </div>
