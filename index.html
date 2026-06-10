@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>Perfil</title>
+<title>Búsqueda en contexto</title>
 
 <style>
 *{
@@ -45,58 +45,87 @@ body{
   color:#2b2f36;
 }
 
+.subtitle{
+  font-size:12px;
+  color:#7a8596;
+  margin-top:4px;
+}
+
+/* SEARCH */
+.search-box{
+  padding:14px 20px;
+}
+
+input{
+  width:100%;
+  padding:14px;
+  border-radius:16px;
+  border:1px solid #e6ecf5;
+  background:#f9fbfd;
+  font-size:13px;
+  outline:none;
+}
+
+/* FILTERS */
+.filters{
+  display:flex;
+  gap:8px;
+  padding:0 20px;
+  overflow-x:auto;
+  margin-top:10px;
+}
+
+.filter{
+  padding:8px 12px;
+  border-radius:999px;
+  border:1px solid #e6ecf5;
+  font-size:12px;
+  color:#7a8596;
+  white-space:nowrap;
+  background:#fff;
+}
+
+.filter.active{
+  background:#4f7cff;
+  color:#fff;
+  border-color:#4f7cff;
+}
+
 /* CONTENT */
 .content{
   flex:1;
   overflow-y:auto;
-  padding:20px;
+  padding:16px 20px;
   display:flex;
   flex-direction:column;
-  gap:14px;
+  gap:10px;
 }
 
-/* SECTION */
-.section-title{
-  font-size:11px;
-  color:#9aa6b2;
-  text-transform:uppercase;
-  letter-spacing:0.5px;
-  margin-top:10px;
-}
-
-/* CARD */
-.card{
-  background:#fff;
+/* RESULT ITEM */
+.item{
+  background:#f8fbff;
   border:1px solid #e6ecf5;
   border-radius:16px;
   padding:14px;
-  display:flex;
-  flex-direction:column;
-  gap:6px;
 }
 
-.label{
+.type{
   font-size:11px;
-  color:#9aa6b2;
+  font-weight:600;
+  color:#4f7cff;
+  margin-bottom:6px;
 }
 
-.value{
+.text{
   font-size:13px;
   color:#2b2f36;
-  font-weight:500;
+  line-height:1.4;
 }
 
-/* LOGOUT */
-.logout{
-  margin-top:20px;
-  padding:14px;
-  border-radius:16px;
-  border:1px solid #ffe1e6;
-  background:#fff5f7;
-  color:#ff5c7a;
-  font-size:14px;
-  font-weight:500;
-  text-align:center;
+.context-tag{
+  margin-top:8px;
+  font-size:11px;
+  color:#9aa6b2;
 }
 
 /* NAV */
@@ -126,41 +155,60 @@ body{
 
   <!-- HEADER -->
   <div class="header">
-    <div class="title">Perfil</div>
+    <div class="title">Buscar</div>
+    <div class="subtitle">Dentro de Trabajo</div>
+  </div>
+
+  <!-- SEARCH -->
+  <div class="search-box">
+    <input type="text" placeholder="Buscar recuerdos, logros, notas..." />
+  </div>
+
+  <!-- FILTERS -->
+  <div class="filters">
+
+    <div class="filter active">Todos</div>
+    <div class="filter">Recuerdos</div>
+    <div class="filter">Logros</div>
+    <div class="filter">Validaciones</div>
+    <div class="filter">Notas</div>
+    <div class="filter">Recursos</div>
+
   </div>
 
   <!-- CONTENT -->
   <div class="content">
 
-    <div class="section-title">Datos personales</div>
-
-    <div class="card">
-      <div class="label">Nombre</div>
-      <div class="value">Luca</div>
+    <div class="item">
+      <div class="type">Logro</div>
+      <div class="text">
+        Terminaste el proyecto antes de lo esperado
+      </div>
+      <div class="context-tag">Trabajo</div>
     </div>
 
-    <div class="card">
-      <div class="label">Apellido</div>
-      <div class="value">Giallonardi</div>
+    <div class="item">
+      <div class="type">Validación</div>
+      <div class="text">
+        “Tu trabajo fue excelente este mes”
+      </div>
+      <div class="context-tag">Trabajo</div>
     </div>
 
-    <div class="card">
-      <div class="label">Edad</div>
-      <div class="value">26</div>
+    <div class="item">
+      <div class="type">Nota personal</div>
+      <div class="text">
+        No todo lo que siento define mi capacidad real
+      </div>
+      <div class="context-tag">Trabajo</div>
     </div>
 
-    <div class="card">
-      <div class="label">Email</div>
-      <div class="value">luca@email.com</div>
-    </div>
-
-    <div class="card">
-      <div class="label">Teléfono</div>
-      <div class="value">+54 9 11 1234-5678</div>
-    </div>
-
-    <div class="logout">
-      Cerrar sesión
+    <div class="item">
+      <div class="type">Recuerdo</div>
+      <div class="text">
+        Ese día que pensaste que no podías y lo lograste igual
+      </div>
+      <div class="context-tag">Trabajo</div>
     </div>
 
   </div>
@@ -168,8 +216,8 @@ body{
   <!-- NAV -->
   <div class="nav">
     <div class="nav-item">Inicio</div>
-    <div class="nav-item">Buscar</div>
-    <div class="nav-item active">Perfil</div>
+    <div class="nav-item active">Buscar</div>
+    <div class="nav-item">Perfil</div>
   </div>
 
 </div>
