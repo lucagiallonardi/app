@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Crear Contexto</title>
+  <title>Recuperar Perspectiva - Dashboard</title>
 
   <style>
     * {
@@ -32,125 +32,104 @@
       flex-direction: column;
     }
 
-    /* Header */
-    .header {
+    /* Topbar */
+    .topbar {
       padding: 22px;
       display: flex;
       justify-content: space-between;
       align-items: center;
     }
 
-    .back {
-      font-size: 13px;
-      color: #7a8596;
-    }
-
     .title {
-      font-size: 15px;
+      font-size: 16px;
       font-weight: 600;
       color: #2b2f36;
     }
 
-    .save {
-      font-size: 13px;
-      color: #4f7cff;
-      font-weight: 500;
-    }
-
-    /* Content */
-    .content {
-      flex: 1;
-      padding: 10px 22px;
-      display: flex;
-      flex-direction: column;
-      gap: 18px;
-    }
-
-    .label {
-      font-size: 12px;
-      color: #7a8596;
-      margin-bottom: 6px;
-    }
-
-    input {
-      width: 100%;
-      padding: 14px;
-      border-radius: 14px;
-      border: 1px solid #e3e8f0;
-      background: #f9fbfd;
-      outline: none;
-      font-size: 14px;
-    }
-
-    input:focus {
-      border-color: #9bb7ff;
-      background: #fff;
-    }
-
-    /* Icon selector */
-    .icons {
-      display: grid;
-      grid-template-columns: repeat(5, 1fr);
-      gap: 10px;
-    }
-
-    .icon {
-      width: 54px;
-      height: 54px;
-      border-radius: 14px;
+    .plus {
+      width: 34px;
+      height: 34px;
+      border-radius: 12px;
       background: #f2f5fb;
       display: flex;
       justify-content: center;
       align-items: center;
-      font-size: 22px;
+      font-size: 18px;
+      color: #4f7cff;
       cursor: pointer;
-      transition: 0.2s ease;
-      border: 1px solid transparent;
     }
 
-    .icon.active {
-      border: 1px solid #4f7cff;
-      background: #eef3ff;
+    /* Greeting */
+    .greeting {
+      padding: 0 22px 10px 22px;
+      font-size: 14px;
+      color: #7a8596;
     }
 
-    /* Color picker */
-    .colors {
-      display: flex;
-      gap: 10px;
+    .greeting strong {
+      color: #2b2f36;
     }
 
-    .color {
-      width: 34px;
-      height: 34px;
-      border-radius: 50%;
-      cursor: pointer;
-      border: 2px solid transparent;
+    /* Context grid */
+    .grid {
+      padding: 10px 22px;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 14px;
+      overflow-y: auto;
+      flex: 1;
     }
 
-    .color.active {
-      border: 2px solid #2b2f36;
-    }
-
-    /* Card hint */
-    .hint {
-      padding: 14px;
-      border-radius: 14px;
+    .card {
       background: #f8fbff;
       border: 1px solid #e6ecf5;
-      font-size: 12px;
-      color: #5f6b7a;
-      line-height: 1.5;
+      border-radius: 18px;
+      padding: 16px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      cursor: pointer;
+      transition: 0.2s ease;
     }
 
-    /* Footer */
-    .footer {
-      padding: 18px 22px;
+    .card:hover {
+      transform: translateY(-2px);
+    }
+
+    .icon {
+      width: 42px;
+      height: 42px;
+      border-radius: 14px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 20px;
+    }
+
+    .name {
+      font-size: 14px;
+      font-weight: 600;
+      color: #2b2f36;
+    }
+
+    .meta {
+      font-size: 12px;
+      color: #7a8596;
+    }
+
+    /* floating recovery button */
+    .floating {
+      position: absolute;
+      bottom: 90px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 85%;
     }
 
     .btn {
       width: 100%;
       padding: 14px;
-      border-radius: 14px;
+      border-radius: 16px;
       border: none;
       background: #4f7cff;
       color: white;
@@ -163,6 +142,26 @@
       background: #3e6df0;
     }
 
+    /* bottom nav */
+    .nav {
+      height: 70px;
+      border-top: 1px solid #eef2f7;
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      background: #fff;
+    }
+
+    .nav-item {
+      font-size: 12px;
+      color: #a0a9b8;
+      text-align: center;
+    }
+
+    .nav-item.active {
+      color: #4f7cff;
+    }
+
   </style>
 </head>
 
@@ -170,58 +169,69 @@
 
   <div class="phone">
 
-    <!-- Header -->
-    <div class="header">
-      <div class="back">Atrás</div>
-      <div class="title">Nuevo contexto</div>
-      <div class="save">Guardar</div>
+    <!-- Top -->
+    <div>
+      <div class="topbar">
+        <div class="title">Tus contextos</div>
+        <div class="plus">+</div>
+      </div>
+
+      <div class="greeting">
+        Hoy, si lo necesitás, podés volver a ver <strong>todo lo que ya construiste</strong>.
+      </div>
     </div>
 
-    <!-- Content -->
-    <div class="content">
+    <!-- Grid -->
+    <div class="grid">
 
-      <div>
-        <div class="label">Nombre del contexto</div>
-        <input type="text" placeholder="Ej: Trabajo, Facultad, Familia..." />
+      <div class="card">
+        <div class="icon" style="background:#e0ecff;">💼</div>
+        <div class="name">Trabajo</div>
+        <div class="meta">3 recuerdos</div>
       </div>
 
-      <div>
-        <div class="label">Elegí un icono</div>
-        <div class="icons">
-          <div class="icon active">💼</div>
-          <div class="icon">📚</div>
-          <div class="icon">👨‍👩‍👧</div>
-          <div class="icon">❤️</div>
-          <div class="icon">🏃</div>
-          <div class="icon">🎧</div>
-          <div class="icon">🎯</div>
-          <div class="icon">🌿</div>
-          <div class="icon">🧠</div>
-          <div class="icon">✨</div>
-        </div>
+      <div class="card">
+        <div class="icon" style="background:#e7f9f0;">📚</div>
+        <div class="name">Facultad</div>
+        <div class="meta">5 logros</div>
       </div>
 
-      <div>
-        <div class="label">Color del contexto</div>
-        <div class="colors">
-          <div class="color active" style="background:#4f7cff;"></div>
-          <div class="color" style="background:#7dd3fc;"></div>
-          <div class="color" style="background:#a7f3d0;"></div>
-          <div class="color" style="background:#fcd34d;"></div>
-          <div class="color" style="background:#fca5a5;"></div>
-        </div>
+      <div class="card">
+        <div class="icon" style="background:#ffe7ea;">❤️</div>
+        <div class="name">Pareja</div>
+        <div class="meta">2 mensajes</div>
       </div>
 
-      <div class="hint">
-        Este contexto te ayuda a organizar recuerdos de una misma área de tu vida.
-        No tiene que ser perfecto, solo significativo para vos.
+      <div class="card">
+        <div class="icon" style="background:#fff6d6;">👨‍👩‍👧</div>
+        <div class="name">Familia</div>
+        <div class="meta">4 recuerdos</div>
+      </div>
+
+      <div class="card">
+        <div class="icon" style="background:#e9f2ff;">🎧</div>
+        <div class="name">Hobbies</div>
+        <div class="meta">1 recurso</div>
+      </div>
+
+      <div class="card">
+        <div class="icon" style="background:#edfdf5;">🏃</div>
+        <div class="name">Salud</div>
+        <div class="meta">2 notas</div>
       </div>
 
     </div>
 
-    <!-- Footer -->
-    <div class="footer">
-      <button class="btn">Crear contexto</button>
+    <!-- Floating CTA -->
+    <div class="floating">
+      <button class="btn">Recuperar Perspectiva</button>
+    </div>
+
+    <!-- Bottom nav -->
+    <div class="nav">
+      <div class="nav-item active">Inicio</div>
+      <div class="nav-item">Buscar</div>
+      <div class="nav-item">Perfil</div>
     </div>
 
   </div>
