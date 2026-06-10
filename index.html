@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>Búsqueda en contexto</title>
+<title>Crear Recurso</title>
 
 <style>
 *{
@@ -36,6 +36,9 @@ body{
 /* HEADER */
 .header{
   padding:18px 20px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
   border-bottom:1px solid #eef2f7;
 }
 
@@ -45,50 +48,9 @@ body{
   color:#2b2f36;
 }
 
-.subtitle{
-  font-size:12px;
-  color:#7a8596;
-  margin-top:4px;
-}
-
-/* SEARCH */
-.search-box{
-  padding:14px 20px;
-}
-
-input{
-  width:100%;
-  padding:14px;
-  border-radius:16px;
-  border:1px solid #e6ecf5;
-  background:#f9fbfd;
+.save{
   font-size:13px;
-  outline:none;
-}
-
-/* FILTERS */
-.filters{
-  display:flex;
-  gap:7px;
-  padding:0 20px;
-  overflow-x:auto;
-  margin-top:10px;
-}
-
-.filter{
-  padding:7px 11px;
-  border-radius:999px;
-  border:1px solid #e6ecf5;
-  font-size:10px;
-  color:#7a8596;
-  white-space:nowrap;
-  background:#fff;
-}
-
-.filter.active{
-  background:#4f7cff;
-  color:#fff;
-  border-color:#4f7cff;
+  color:#4f7cff;
 }
 
 /* CONTENT */
@@ -98,52 +60,90 @@ input{
   padding:16px 20px;
   display:flex;
   flex-direction:column;
-  gap:10px;
+  gap:14px;
 }
 
-/* RESULT ITEM */
-.item{
-  background:#f8fbff;
-  border:1px solid #e6ecf5;
-  border-radius:16px;
-  padding:14px;
-}
-
-.type{
+/* INPUT */
+.label{
   font-size:11px;
-  font-weight:600;
-  color:#4f7cff;
+  color:#9aa6b2;
+  text-transform:uppercase;
+  letter-spacing:0.4px;
   margin-bottom:6px;
 }
 
-.text{
+input, textarea{
+  width:100%;
+  padding:14px;
+  border-radius:14px;
+  border:1px solid #e6ecf5;
+  background:#f9fbfd;
   font-size:13px;
-  color:#2b2f36;
-  line-height:1.4;
+  outline:none;
 }
 
-.context-tag{
-  margin-top:8px;
-  font-size:11px;
-  color:#9aa6b2;
+textarea{
+  resize:none;
+  height:90px;
 }
 
-/* NAV */
-.nav{
-  height:70px;
-  border-top:1px solid #eef2f7;
+/* LINK BOX */
+.link-box{
+  border:1px solid #e6ecf5;
+  border-radius:18px;
+  padding:14px;
+  background:#f8fbff;
+}
+
+.preview{
+  margin-top:10px;
+  padding:12px;
+  border-radius:14px;
+  background:#fff;
+  border:1px solid #e6ecf5;
   display:flex;
-  justify-content:space-around;
   align-items:center;
+  gap:10px;
 }
 
-.nav-item{
-  font-size:12px;
-  color:#a0a9b8;
+.icon{
+  width:40px;
+  height:40px;
+  border-radius:14px;
+  background:#4f7cff;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  color:#fff;
+  font-size:16px;
 }
 
-.active{
+/* TAG */
+.tag{
+  display:inline-block;
+  margin-top:10px;
+  padding:6px 10px;
+  border-radius:999px;
+  background:#eaf1ff;
   color:#4f7cff;
+  font-size:11px;
+}
+
+/* FOOTER */
+.footer{
+  padding:16px 20px;
+  border-top:1px solid #eef2f7;
+}
+
+.btn{
+  width:100%;
+  padding:14px;
+  border:none;
+  border-radius:16px;
+  background:#4f7cff;
+  color:#fff;
+  font-size:14px;
+  font-weight:500;
 }
 
 </style>
@@ -155,69 +155,57 @@ input{
 
   <!-- HEADER -->
   <div class="header">
-    <div class="title">Buscar</div>
-    <div class="subtitle">Dentro de Trabajo</div>
+    <div class="title">Nuevo recurso</div>
+    <div class="save">Guardar</div>
   </div>
 
-  <!-- SEARCH -->
-  <div class="search-box">
-    <input type="text" placeholder="Buscar recuerdos, logros, notas..." />
-  </div>
-
-  <!-- FILTERS -->
-  <div class="filters">
-
-
-    <div class="filter">Recuerdos</div>
-    <div class="filter">Logros</div>
-    <div class="filter">Validaciones</div>
-    <div class="filter">Notas</div>
-    <div class="filter">Recursos</div>
-
-  </div>
-
-  <!-- CONTENT -->
   <div class="content">
 
-    <div class="item">
-      <div class="type">Logro</div>
-      <div class="text">
-        Terminaste el proyecto antes de lo esperado
-      </div>
-      <div class="context-tag">Trabajo</div>
+    <!-- NAME -->
+    <div>
+      <div class="label">Nombre del recurso</div>
+      <input type="text" placeholder="Ej: Música para concentrarme" />
     </div>
 
-    <div class="item">
-      <div class="type">Validación</div>
-      <div class="text">
-        “Tu trabajo fue excelente este mes”
+    <!-- LINK -->
+    <div class="link-box">
+
+      <div>
+        <div class="label">Pegar link (YouTube / Spotify)</div>
+        <input type="text" placeholder="https://..." />
       </div>
-      <div class="context-tag">Trabajo</div>
+
+      <!-- PREVIEW SIMULADO -->
+      <div class="preview">
+
+        <div class="icon">🎵</div>
+
+        <div>
+          <div style="font-size:13px;font-weight:600;color:#2b2f36;">
+            Lo-fi Chill Mix
+          </div>
+          <div style="font-size:11px;color:#7a8596;">
+            Recurso detectado (YouTube)
+          </div>
+        </div>
+
+      </div>
+
+      <div class="tag">Recurso emocional activo</div>
+
     </div>
 
-    <div class="item">
-      <div class="type">Nota personal</div>
-      <div class="text">
-        No todo lo que siento define mi capacidad real
-      </div>
-      <div class="context-tag">Trabajo</div>
-    </div>
-
-    <div class="item">
-      <div class="type">Recuerdo</div>
-      <div class="text">
-        Ese día que pensaste que no podías y lo lograste igual
-      </div>
-      <div class="context-tag">Trabajo</div>
+    <!-- CONTEXT -->
+    <div>
+      <div class="label">¿Cuándo usarlo?</div>
+      <textarea placeholder="Ej: Cuando estoy ansioso / cuando no puedo concentrarme"></textarea>
     </div>
 
   </div>
 
-  <!-- NAV -->
-  <div class="nav">
-    <div class="nav-item">Inicio</div>
-    <div class="nav-item active">Buscar</div>
-    <div class="nav-item">Perfil</div>
+  <!-- FOOTER -->
+  <div class="footer">
+    <button class="btn">Guardar recurso</button>
   </div>
 
 </div>
