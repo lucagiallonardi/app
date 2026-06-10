@@ -3,33 +3,25 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>Recuerdo</title>
+<title>Logro</title>
 
 <style>
+/* (mismo base layout) */
 *{margin:0;padding:0;box-sizing:border-box;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;}
 body{background:#eef3f9;height:100vh;display:flex;justify-content:center;align-items:center;}
+.phone{width:390px;height:844px;background:#fff;border-radius:28px;box-shadow:0 20px 60px rgba(0,0,0,0.12);display:flex;flex-direction:column;overflow:hidden;}
 
-.phone{
-  width:390px;height:844px;background:#fff;border-radius:28px;
-  box-shadow:0 20px 60px rgba(0,0,0,0.12);
-  display:flex;flex-direction:column;overflow:hidden;
-}
-
-.header{
-  padding:18px 20px;border-bottom:1px solid #eef2f7;
-  display:flex;justify-content:space-between;align-items:center;
-}
-
+.header{padding:18px 20px;border-bottom:1px solid #eef2f7;display:flex;justify-content:space-between;}
 .title{font-size:14px;font-weight:600;color:#2b2f36;}
 .back{font-size:12px;color:#7a8596;}
 
 .content{flex:1;overflow-y:auto;padding:16px;}
 
-.image{
+.hero{
   width:100%;
-  height:240px;
+  height:140px;
   border-radius:18px;
-  background:linear-gradient(135deg,#c7d2fe,#e0e7ff);
+  background:linear-gradient(135deg,#dbeafe,#eff6ff);
   display:flex;
   align-items:center;
   justify-content:center;
@@ -46,28 +38,9 @@ body{background:#eef3f9;height:100vh;display:flex;justify-content:center;align-i
 .label{font-size:11px;color:#9aa6b2;text-transform:uppercase;}
 .text{font-size:14px;color:#2b2f36;margin-top:6px;line-height:1.5;}
 
-.context{
-  margin-top:10px;
-  font-size:12px;
-  color:#4f7cff;
-}
+.footer{padding:16px;border-top:1px solid #eef2f7;display:flex;gap:10px;}
 
-.footer{
-  padding:16px;
-  border-top:1px solid #eef2f7;
-  display:flex;
-  gap:10px;
-}
-
-.btn{
-  flex:1;
-  padding:12px;
-  border-radius:14px;
-  border:none;
-  font-size:13px;
-  font-weight:600;
-}
-
+.btn{flex:1;padding:12px;border-radius:14px;border:none;font-size:13px;font-weight:600;}
 .primary{background:#4f7cff;color:#fff;}
 .secondary{background:#f1f4ff;color:#4f7cff;}
 </style>
@@ -78,18 +51,17 @@ body{background:#eef3f9;height:100vh;display:flex;justify-content:center;align-i
 
   <div class="header">
     <div class="back">‹ Volver</div>
-    <div class="title">Recuerdo</div>
+    <div class="title">Logro</div>
     <div></div>
   </div>
 
   <div class="content">
 
-    <div class="image">📸</div>
+    <div class="hero">🏆</div>
 
     <div class="card">
-      <div class="label">Descripción</div>
-      <div class="text">Ese día logré algo que pensaba imposible.</div>
-      <div class="context">Contexto: Trabajo</div>
+      <div class="label">Logro</div>
+      <div class="text">Terminaste un proyecto que venías evitando hace semanas.</div>
     </div>
 
   </div>
