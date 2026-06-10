@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>Crear Recuerdo</title>
+<title>Crear Validación</title>
 
 <style>
 *{
@@ -54,72 +54,75 @@ body{
   gap:16px;
 }
 
-/* IMAGE UPLOAD */
+/* UPLOAD */
 .upload{
-  width:100%;
-  height:220px;
+  border:2px dashed #ffd3dc;
+  background:#fff7f8;
   border-radius:20px;
-  border:2px dashed #cfd8ea;
-  background:#f8fbff;
+  padding:18px;
   display:flex;
   flex-direction:column;
   align-items:center;
   justify-content:center;
-  gap:8px;
-  color:#7a8596;
+  gap:6px;
+  color:#ff5c7a;
 }
 
 .upload strong{
-  color:#4f7cff;
   font-size:13px;
 }
 
 .upload span{
   font-size:12px;
+  color:#a0a9b8;
 }
 
-/* INPUTS */
+/* LABEL */
 .label{
   font-size:12px;
   color:#9aa6b2;
-  margin-bottom:6px;
   text-transform:uppercase;
+  margin-bottom:6px;
 }
 
-input, textarea{
+input{
   width:100%;
+  padding:14px;
   border-radius:14px;
   border:1px solid #e6ecf5;
   background:#f9fbfd;
-  padding:14px;
   font-size:13px;
-  outline:none;
 }
 
-textarea{
-  height:100px;
-  resize:none;
-  line-height:1.5;
-}
-
-/* PREVIEW CARD */
-.preview{
-  background:#fffaf2;
+/* CHAT PREVIEW */
+.chat-preview{
+  background:#f8fbff;
   border:1px solid #e6ecf5;
   border-radius:18px;
-  overflow:hidden;
+  padding:14px;
+  display:flex;
+  flex-direction:column;
+  gap:10px;
 }
 
-.preview img{
-  width:100%;
-  height:180px;
-  object-fit:cover;
-}
-
-.preview-text{
+.message{
+  background:#fff;
+  border:1px solid #e6ecf5;
   padding:12px;
+  border-radius:14px;
   font-size:13px;
   color:#2b2f36;
+  max-width:85%;
+}
+
+.message.self{
+  align-self:flex-end;
+  background:#eaf1ff;
+  border-color:#d6e3ff;
+}
+
+.message.other{
+  align-self:flex-start;
 }
 
 /* FOOTER */
@@ -133,14 +136,14 @@ textarea{
   padding:14px;
   border:none;
   border-radius:16px;
-  background:#4f7cff;
+  background:#ff5c7a;
   color:#fff;
   font-size:14px;
   font-weight:500;
 }
 
 .btn:disabled{
-  background:#c8d3f5;
+  background:#f3b6c2;
 }
 
 </style>
@@ -153,7 +156,7 @@ textarea{
   <!-- HEADER -->
   <div class="header">
     <div class="back">‹ Atrás</div>
-    <div class="title">Nuevo recuerdo</div>
+    <div class="title">Nueva validación</div>
     <div class="save">Guardar</div>
   </div>
 
@@ -162,42 +165,35 @@ textarea{
 
     <!-- UPLOAD -->
     <div class="upload">
-      <div style="font-size:22px;">📸</div>
-      <strong>Subí una foto</strong>
-      <span>o tocá para elegir desde tu galería</span>
+      <div style="font-size:22px;">💬</div>
+      <strong>Subí una captura o mensaje</strong>
+      <span>WhatsApp, chat, email, etc.</span>
     </div>
 
-    <!-- TITLE -->
+    <!-- SOURCE -->
     <div>
-      <div class="label">Título</div>
-      <input type="text" placeholder="Ej: Día que me sentí orgulloso/a" />
+      <div class="label">¿Quién lo dijo?</div>
+      <input type="text" placeholder="Ej: Mi jefe / Profesor / Amigo" />
     </div>
 
-    <!-- CONTEXT -->
-    <div>
-      <div class="label">Contexto</div>
-      <input type="text" value="Trabajo" disabled />
-    </div>
+    <!-- CHAT PREVIEW -->
+    <div class="chat-preview">
 
-    <!-- NOTE -->
-    <div>
-      <div class="label">¿Qué querés recordar de esto?</div>
-      <textarea placeholder="Ej: Aunque estaba nervioso, lo hice igual..."></textarea>
-    </div>
-
-    <!-- PREVIEW -->
-    <div class="preview">
-      <img src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?w=800"/>
-      <div class="preview-text">
-        Este momento te representa algo importante que lograste.
+      <div class="message other">
+        La verdad hiciste un muy buen trabajo en este proyecto.
       </div>
+
+      <div class="message self">
+        ¡Gracias! Lo intenté dar lo mejor.
+      </div>
+
     </div>
 
   </div>
 
   <!-- FOOTER -->
   <div class="footer">
-    <button class="btn">Guardar recuerdo</button>
+    <button class="btn">Guardar validación</button>
   </div>
 
 </div>
