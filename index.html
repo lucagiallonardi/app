@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Recuperar Perspectiva - Login</title>
+  <title>Recuperar Perspectiva - Onboarding</title>
 
   <style>
     * {
@@ -21,7 +21,6 @@
       align-items: center;
     }
 
-    /* Mobile frame */
     .phone {
       width: 390px;
       height: 844px;
@@ -35,85 +34,117 @@
       padding: 40px 28px;
     }
 
-    /* Header */
-    .header {
-      text-align: center;
-      margin-top: 40px;
+    /* Progress */
+    .progress {
+      display: flex;
+      gap: 6px;
+      margin-top: 10px;
     }
 
-    .logo {
+    .bar {
+      flex: 1;
+      height: 4px;
+      background: #e6ecf5;
+      border-radius: 10px;
+      overflow: hidden;
+    }
+
+    .bar.active {
+      background: #4f7cff;
+    }
+
+    /* Content */
+    .content {
+      margin-top: 40px;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+    }
+
+    .title {
       font-size: 22px;
       font-weight: 600;
       color: #2b2f36;
-      letter-spacing: -0.5px;
+      letter-spacing: -0.3px;
     }
 
-    .subtitle {
-      margin-top: 10px;
+    .text {
       font-size: 14px;
       color: #7a8596;
-      line-height: 1.4;
+      line-height: 1.6;
     }
 
-    /* Form */
-    .form {
-      margin-top: 40px;
+    /* Card */
+    .card {
+      margin-top: 20px;
+      padding: 20px;
+      border-radius: 18px;
+      background: #f8fbff;
+      border: 1px solid #e6ecf5;
+      text-align: left;
+    }
+
+    .card-title {
+      font-size: 13px;
+      font-weight: 600;
+      color: #4f7cff;
+      margin-bottom: 8px;
+    }
+
+    .card-text {
+      font-size: 13px;
+      color: #5f6b7a;
+      line-height: 1.5;
+    }
+
+    /* Buttons */
+    .buttons {
       display: flex;
       flex-direction: column;
-      gap: 14px;
-    }
-
-    .input {
-      padding: 14px 16px;
-      border-radius: 14px;
-      border: 1px solid #e3e8f0;
-      background: #f9fbfd;
-      font-size: 14px;
-      outline: none;
-      transition: 0.2s ease;
-    }
-
-    .input:focus {
-      border-color: #9bb7ff;
-      background: #ffffff;
+      gap: 12px;
+      margin-bottom: 10px;
     }
 
     .btn {
-      margin-top: 10px;
       padding: 14px;
-      border: none;
       border-radius: 14px;
-      background: #4f7cff;
-      color: white;
+      border: none;
       font-size: 14px;
-      font-weight: 500;
       cursor: pointer;
       transition: 0.2s ease;
     }
 
-    .btn:hover {
+    .primary {
+      background: #4f7cff;
+      color: white;
+    }
+
+    .primary:hover {
       background: #3e6df0;
     }
 
-    .secondary {
-      text-align: center;
-      font-size: 13px;
+    .ghost {
+      background: transparent;
       color: #7a8596;
-      margin-top: 10px;
     }
 
-    .secondary a {
-      color: #4f7cff;
-      text-decoration: none;
-      font-weight: 500;
+    .ghost:hover {
+      color: #2b2f36;
     }
 
-    /* Bottom calming element */
+    /* Calm footer */
     .footer {
       text-align: center;
       font-size: 12px;
       color: #a0a9b8;
-      padding-bottom: 10px;
+    }
+
+    .breath {
+      display: flex;
+      justify-content: center;
+      margin-top: 6px;
+      gap: 4px;
     }
 
     .dot {
@@ -121,15 +152,17 @@
       height: 6px;
       background: #c7d2e6;
       border-radius: 50%;
-      display: inline-block;
-      margin: 0 2px;
-      animation: breathe 2.5s infinite ease-in-out;
+      animation: breathe 2.6s infinite ease-in-out;
     }
 
+    .dot:nth-child(2) { animation-delay: 0.2s; }
+    .dot:nth-child(3) { animation-delay: 0.4s; }
+
     @keyframes breathe {
-      0%, 100% { transform: scale(1); opacity: 0.5; }
-      50% { transform: scale(1.6); opacity: 1; }
+      0%, 100% { transform: scale(1); opacity: 0.4; }
+      50% { transform: scale(1.7); opacity: 1; }
     }
+
   </style>
 </head>
 
@@ -137,36 +170,54 @@
 
   <div class="phone">
 
-    <!-- Header -->
-    <div class="header">
-      <div class="logo">Recuperar Perspectiva</div>
-      <div class="subtitle">
-        Un espacio para volver a ver con claridad<br/>
-        cuando todo se siente demasiado.
-      </div>
-    </div>
-
-    <!-- Form -->
+    <!-- Progress -->
     <div>
-      <div class="form">
-        <input class="input" type="email" placeholder="Correo electrónico" />
-        <input class="input" type="password" placeholder="Contraseña" />
+      <div class="progress">
+        <div class="bar active"></div>
+        <div class="bar"></div>
+        <div class="bar"></div>
+      </div>
 
-        <button class="btn">Iniciar sesión</button>
+      <!-- Content -->
+      <div class="content">
+        <div class="title">No estás perdiendo el rumbo</div>
 
-        <div class="secondary">
-          ¿No tienes cuenta? <a href="#">Crear cuenta</a>
+        <div class="text">
+          A veces la mente se enfoca solo en lo que falta o en lo que salió mal.
+          Esta app existe para ayudarte a recordar todo lo que sí estás construyendo.
+        </div>
+
+        <div class="card">
+          <div class="card-title">💡 Cómo funciona</div>
+          <div class="card-text">
+            Guardas momentos reales de tu vida: logros, mensajes, recuerdos o cosas que te hacen bien.
+            Cuando lo necesites, la app te los devuelve como evidencia de tu valor.
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-title">🧠 Importante</div>
+          <div class="card-text">
+            No es una red social. No es una galería.
+            Es un espacio privado para ayudarte a ver tu vida con más claridad.
+          </div>
         </div>
       </div>
     </div>
 
-    <!-- Footer calming -->
+    <!-- Buttons -->
+    <div class="buttons">
+      <button class="btn primary">Continuar</button>
+      <button class="btn ghost">Saltar</button>
+    </div>
+
+    <!-- Footer calm -->
     <div class="footer">
-      respira
-      <div>
-        <span class="dot"></span>
-        <span class="dot"></span>
-        <span class="dot"></span>
+      estás a salvo aquí
+      <div class="breath">
+        <div class="dot"></div>
+        <div class="dot"></div>
+        <div class="dot"></div>
       </div>
     </div>
 
